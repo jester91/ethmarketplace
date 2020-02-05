@@ -1,1 +1,90 @@
 /* Styles go here */
+.landing-page{
+ background-image: linear-gradient(125deg,#1a2a3a,#27ae60,#0d3550,#6d6309,#00e67a);
+ background-size:400%;
+ animation: bganimation 15s infinite;
+ position: static;  
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+@keyframes bganimation{
+    0%{
+      background-position: 0% 50%;
+    }
+    50%{
+      background-position: 100% 50%;
+    }
+    100%{
+      background-position: 0% 50%;
+    }
+  }
+table td{
+    color:white;
+    overflow-x:auto;
+}
+h1{
+    color:white;
+}
+@media screen and (max-width:1600px) {
+    .landing-page{
+        position:absolute;
+        top:0px;
+        left:0px;
+        width:auto;
+        height:100v;
+        
+    }
+    .row{
+        width: auto;
+        height: auto;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        border: 1px solid #ddd;
+      }
+      
+    th, td {
+        text-align: left;
+        padding: 8px;
+      }
+  }
+
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px)  {
+  
+      /* Force table to not be like tables anymore */
+      table, thead, tbody, th, td, tr { 
+          display: block; 
+      }
+      
+      /* Hide table headers (but not display: none;, for accessibility) */
+      thead tr { 
+          position: absolute;
+          top: -9999px;
+          left: -9999px;
+      }
+      
+      tr { border: 1px solid #ccc; }
+      
+      td { 
+          /* Behave  like a "row" */
+          border: none;
+          border-bottom: 1px solid #eee; 
+          position: relative;
+          padding-left: 50%; 
+      }
+      
+      td:before { 
+          /* Now like a table header */
+          position: absolute;
+          /* Top/left values mimic padding */
+          top: 6px;
+          left: 6px;
+          width: 45%; 
+          padding-right: 10px; 
+          white-space: nowrap;
+      }}
